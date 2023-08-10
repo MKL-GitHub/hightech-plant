@@ -1,0 +1,30 @@
+<div
+  [ngClass]="{ 
+  ResizableLayout: true,
+  ResizableLayout_vertical:  column,
+ }"
+>
+  <div
+    *ngIf="showStart"
+    class="ResizableLayout__start"
+    [ngStyle]="getStyle(startSize)"
+    #start
+  >
+    <ng-content select="[slot='start']" />
+  </div>
+
+  <div
+    *ngIf="showStart && showEnd"
+    class="ResizableLayout__resizer"
+    (mousedown)="onResizerMouseDown($event)"
+  ></div>
+
+  <div
+    *ngIf="showEnd"
+    class="ResizableLayout__end"
+    [ngStyle]="getStyle(endSize)"
+    #end
+  >
+    <ng-content select="[slot='end']" />
+  </div>
+</div>

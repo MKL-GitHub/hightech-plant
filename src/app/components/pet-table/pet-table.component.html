@@ -1,0 +1,16 @@
+<table class="PetTable">
+  <thead>
+    <tr>
+      <th>Имя</th>
+      <th>Категория</th>
+      <th>Статус</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let pet of pets" (click)="onRowClick(pet)">
+      <td>{{ pet.name }}</td>
+      <td>{{ pet.category?.name }}</td>
+      <td>{{ pet.status }}</td>
+    </tr>
+  </tbody>
+</table>

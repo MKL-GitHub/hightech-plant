@@ -1,0 +1,22 @@
+.HomePage {
+  // background-color: #00000010;
+
+  &__h1 {
+    text-align: center;
+    padding-top: 1rem;
+    padding-bottom: 3rem;
+  }
+
+  &__details {
+    background-color: aqua;
+    // width: 100px;
+    // height: 100px;
+    height: 100%;
+  }
+
+  &__horLayout {
+    height: 80vh;
+    overflow: hidden;
+    box-shadow: 0 0 1rem #0000009b;
+  }
+}

@@ -1,0 +1,27 @@
+<div class="container">
+  <div class="HomePage">
+    <h1 class="HomePage__h1">
+      Компания "ООО ХайТек Плант"<br />тестовое задание
+    </h1>
+
+    <div class="HomePage__horLayout">
+      <app-resizable-layout
+        [startSize]="selectedPet ? 60 : 100"
+        [endSize]="selectedPet ? 40 : 0"
+        [showEnd]="!!selectedPet"
+      >
+        <app-pet-table
+          slot="start"
+          [pets]="pets"
+          (onPetClick)="onPetClick($event)"
+        />
+        <app-pet-details
+          slot="end"
+          *ngIf="selectedPet"
+          [pet]="selectedPet"
+          (onCloseClick)="resetSelectedPed($event)"
+        />
+      </app-resizable-layout>
+    </div>
+  </div>
+</div>
